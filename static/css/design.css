@@ -1,0 +1,44 @@
+.wrapper{
+    margin: 0;
+    position: absolute;
+    top:50%;
+    left:50%;
+    text-align:center;
+    transform: translateX(-50%) translateY(-50%);
+    width: 500px;
+    font-family: Georgia;
+}
+#fish{
+    margin:auto;
+    display:block;
+}
+#userbox{
+    margin-bottom: 25px;
+    margin-top: 10px;
+}
+#btn{
+    border: 2.5px solid #0b484e;
+    border-radius:10px;
+    width: 100px;
+    padding:7px;
+    font-size:15px;
+    outline:none;
+    margin:auto;
+    display:block;
+    
+    cursor: pointer;
+}
+#btn:active{
+    border-radius: 25px;
+    background-color: blue;
+    color: white;
+    font-weight: bold;
+}
+.start{
+    color: black;
+    font-size: 30px;
+}
+
+body{
+    background-color: lightblue;
+}

@@ -1,0 +1,4 @@
+mysql_host: "localhost"
+mysql_user: "my_user"
+mysql_password: "password"
+mysql_database: "chatroom"

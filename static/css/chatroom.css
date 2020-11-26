@@ -1,0 +1,91 @@
+h3,h4,h5{
+    margin: auto;
+    margin-bottom:3%;
+    font-weight:normal;
+}
+*{
+    font-family: 'system-ui';
+    box-sizing: border-box;
+}
+.container{
+    background-color: white;
+    height: 500px;
+    border: 5px solid rgb(62, 130, 255);
+    border-radius: 15px;
+    padding: 5px;
+
+    /*centering*/
+    margin: 0;
+    position: absolute;
+    top:50%;
+    left:50%;
+    text-align:center;
+    transform: translateX(-50%) translateY(-50%);
+    width: 800px;
+}
+#line{
+    width: 100%;
+    height: 3px;
+    background: rgb(52, 59, 57);
+}
+.chat-box{
+    margin: 5px;
+    padding: 10px;
+    display: inline-block;
+    background-color: #e4eaf9;
+    height: 75%;
+    width:65%;
+    border: 2px solid black;
+    border-radius: 5px; 
+
+    border-bottom: 5px solid black;
+    /*Creating a scrollbar for the chat*/
+    overflow: hidden;
+    overflow-y: scroll;
+}
+#message{
+    margin: 3px;
+    padding: 3px;
+    width: 80%;
+    border: 2px solid black;
+    border-radius: 3px;
+}
+.buttons{
+    border: 2px solid #0b484e;
+    border-radius:2px;
+    width: 10%;
+    padding:5px;
+    font-size:12px;
+    outline:none;
+    margin:auto;
+    display:inline-block;
+    
+    cursor: pointer;
+}
+.buttons:active{
+    border-radius: 3px;
+    background-color: blue;
+    color: white;
+    font-weight: bold;
+}
+.user-box{
+    display: inline-block;
+    float: right;
+    margin: 5px;
+    background-color: #e4eaf9;
+    height: 75%;
+    width: 25%;
+    border: 2px solid black;
+    border-radius: 5px;
+    border-bottom: 5px solid black;
+}
+#leave-btn{
+    display: inline-block;
+    float: left; 
+    margin-left: 2.5%;
+    border: 3.5px solid black;
+}
+#title{
+    font-weight: bolder;
+    
+}
