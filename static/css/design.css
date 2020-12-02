@@ -16,7 +16,7 @@
     margin-bottom: 25px;
     margin-top: 10px;
 }
-#btn{
+#main-btn{
     border: 2.5px solid #0b484e;
     border-radius:10px;
     width: 100px;
@@ -28,7 +28,7 @@
     
     cursor: pointer;
 }
-#btn:active{
+#main-btn:active{
     border-radius: 25px;
     background-color: blue;
     color: white;
@@ -37,6 +37,11 @@
 .start{
     color: black;
     font-size: 30px;
+}
+#profanity_found{
+    font-size: 16px;
+    font-weight: bold;
+    color:blue;
 }
 
 body{

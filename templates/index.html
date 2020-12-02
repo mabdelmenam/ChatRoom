@@ -4,6 +4,8 @@
 <head>
     <title>Chat</title>
     <link rel="stylesheet" href="../static/css/design.css">
+
+    <script async src="../static/js/chatroom.js"></script>
 </head>
 
 <body>
@@ -14,8 +16,10 @@
         <img src="../static/images/fish.png" id="fish" height="75" width="100">
         <input id="userbox" type="text" class="start" placeholder="Enter your Username:" />
         <br>
-        <button id="btn">Chat</button>
-        <!--onclick='usernameCheck();'-->
+        <div id="profanity_found"></div>
+        <br>
+        <button id="main-btn" onclick='filter();'>Chat</button>
+        <!--'-->
     </div>
 </body>
 
