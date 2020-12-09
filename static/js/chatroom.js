@@ -5,12 +5,6 @@
 //2. Check if the username is in use in the DB
     //2a. If the username is in use, send a message back to the client side showing the username is in use, displaying the message contents.
     //2b. If the username is not in use, send the ' OK ' to the client side, moving forward to the chatroom
-
-    //FIRST
-
-//Create a function to filter out a username based on if there is profanity in that username
-//1a. If profanity is found, prompt user to re-enter their username.
-//1b. If profanity is not found, send the username to the function checking if usernames are in the database.
 var username = document.getElementById("userbox");
 username.addEventListener("keyup", function(event) {
   if (event.keyCode === 13) {
@@ -42,12 +36,11 @@ function filter(){
                 setTimeout(function() {
                     profanity_text.innerHTML = "";
                 }, 3500);
-                console.log("BAD WORD");
             }
             else{ //No Profanity
+                window.location = "/chatroom"
                 console.log("CLEAN");
             }
-            console.log("Response Text: " , this.responseText);
         }
     };
 

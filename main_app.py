@@ -1,3 +1,6 @@
+#export FLASK_APP=main_app.py
+#export FLASK_DEBUG=true
+
 from flask import Flask, request, jsonify
 from flask_cors import CORS
 from flask_mysqldb import MySQL
