@@ -9,6 +9,7 @@ import json
 import sys
 
 app = Flask(__name__)
+app.secret_key = "home101"
 
 # Configure DB
 app.config.from_pyfile('config.py')

@@ -16,10 +16,13 @@
         <img src="../static/images/fish.png" id="fish" height="75" width="100">
         <input id="userbox" type="text" class="start" placeholder="Enter your Username:" />
         <br>
-        <div id="profanity_found"></div>
+        <div id="profanity_found" class="message"></div>
+        {% if info==None %}
+        <div id="session_message" class="message">Please Enter a Username</div>
+        {% endif %}
         <br>
         <button id="main-btn" onclick='filter();'>Chat</button>
-        <!--'-->
+        <!--show message on screen if no username session deteced using JINJA-->
     </div>
 </body>
 

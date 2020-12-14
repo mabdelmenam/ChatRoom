@@ -9,3 +9,16 @@ CREATE table chatUsers(
 );
 
 SELECT * FROM `chatusers` ORDER BY `chatusers`.`id` ASC;
+
+
+/*
+
+To fix numbering in first Column with id.
+
+
+ALTER TABLE chatusers DROP COLUMN id;
+
+ALTER TABLE chatusers ADD COLUMN `id` int(10) NOT NULL PRIMARY KEY AUTO_INCREMENT FIRST;
+
+
+*/

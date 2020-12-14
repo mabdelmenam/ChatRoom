@@ -13,7 +13,10 @@ def index():
 
 @app.route('/chatroom') # Chat Room
 def chatroom():
-    return render_template('chatroom.html')
+        if not session.get('username'):
+                print(session.get('username'), file=sys.stderr)
+                return render_template('index.html',info = session.get('username'))
+        return render_template('chatroom.html')
 
 @app.route('/profanity_filter', methods=['GET', 'POST']) #Profanity Check
 def profanity():
@@ -42,8 +45,18 @@ def profanity():
                     usernameCheck['profanity_check'] = 1
             else:
                     cur.execute("INSERT INTO chatUsers(username) VALUES(%s)", [username])
+                    session["active_user"] = True
+                    session['username'] = username
+                    #print(session.get('username'), file=sys.stderr)
 
             my_mysql.connection.commit()
             cur.close()
 
     return jsonify(usernameCheck)
+
+@app.route('/drop_session', methods=['POST'])
+def drop_session():
+        session.clear()
+        #print("HERE", session.get('username'), file=sys.stderr)
+        #print("HERE", session.get('active_user'), file=sys.stderr)
+        return render_template('index.html')
