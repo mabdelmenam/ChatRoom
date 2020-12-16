@@ -1,11 +1,14 @@
 from main_app import app, my_mysql
 
 from flask import Flask, request, jsonify, session, redirect, url_for, render_template
+from flask_socketio import SocketIO, send, emit, join_room, leave_room
 import json
 
 import sys
 
 app.config['TEMPLATES_AUTO_RELOAD'] = True
+
+socketio = SocketIO(app)
 
 @app.route('/')  # Main Page
 def index():
@@ -16,7 +19,7 @@ def chatroom():
         if not session.get('username'):
                 print(session.get('username'), file=sys.stderr)
                 return render_template('index.html',info = session.get('username'))
-        return render_template('chatroom.html')
+        return render_template('chatroom.html', username = session.get('username'))
 
 @app.route('/profanity_filter', methods=['GET', 'POST']) #Profanity Check
 def profanity():
@@ -45,7 +48,6 @@ def profanity():
                     usernameCheck['profanity_check'] = 1
             else:
                     cur.execute("INSERT INTO chatUsers(username) VALUES(%s)", [username])
-                    session["active_user"] = True
                     session['username'] = username
                     #print(session.get('username'), file=sys.stderr)
 
@@ -57,6 +59,14 @@ def profanity():
 @app.route('/drop_session', methods=['POST'])
 def drop_session():
         session.clear()
-        #print("HERE", session.get('username'), file=sys.stderr)
-        #print("HERE", session.get('active_user'), file=sys.stderr)
         return render_template('index.html')
+
+@socketio.on('message')
+def message(data):
+        print("Yolo: ", data, file=sys.stderr)
+        send(data)
+
+@socketio.on('join') #Joining a Room
+def join(data):
+        join_room(data['room'])
+        send({})

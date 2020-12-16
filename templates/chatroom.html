@@ -2,10 +2,11 @@
 <html>
 
 <head>
-    <link rel="stylesheet" href="../static/css/chatroom.css">
+    <!--<link rel="stylesheet" href="../static/css/chatroom.css">-->
+    <link rel="stylesheet" href="{{url_for('static', filename='css/chatroom.css') }}">
     <link rel="stylesheet" href="../static/css/design.css">
 
-    <script src = "../static/js/will_rename.js"></script>
+    <script src = "../static/js/socket.js"></script>
     
 </head>
 
@@ -20,7 +21,12 @@
 
         <div class="chat-box">
             <div class="chat-log" style="float:left; text-align-last:left; overflow: hidden;">
-                <h5 id="user-chat" class="username"><b style="color: #1b00ff" ;>joey</b>:&nbsp;I was just running in
+                <script type="text/javascript">
+                    const username = `{{username}}`;
+                    console.log("From DB: " + username);
+                </script>
+                <!-- |e will change any special characters to their unicode value -->
+               <!-- <h5 id="user-chat" class="username"><b style="color: #1b00ff" ;>joey</b>:&nbsp;I was just running in
                     the park</h5>
                 <h5 id="user-chat" class="username"><b style="color: #1b00ff" ;>joey</b>:&nbsp;I was just running in
                     the park</h5>
@@ -39,10 +45,10 @@
                     SWEAR JUST AS MICHAEL
                     WAS RUNNING OFF TOO LMAO OMG OMG
                     OMG OMG OMG</h5>
-                <!--CSS TO FIX LINES THAT MOVE TO THE RIGHT ^^-->
+                   CSS TO FIX LINES THAT MOVE TO THE RIGHT ^^
                 <h5 id="admin-chat"><strong>***joey has left the room***</strong></h5>
                 <h5 id="admin-chat"><strong>***michael has left the room***</strong></h5>
-                <h5 id="user-chat" class="username">kingjoe345:&nbsp;goodbye</h5>
+                <h5 id="user-chat" class="username">kingjoe345:&nbsp;goodbye</h5>-->
             </div>
         </div>
 
@@ -53,11 +59,14 @@
             <h5><strong>yoLoDragon21</strong></h5>
         </div>
 
-        <input id="message" type="text" placeholder="Message...">
-        <button id="send-btn" class="buttons">Send</button>
+        <input id="message-text" type="text" placeholder="Message...">
+        <button id="send-btn" class="buttons" onclick='click_to_send();'>Send</button>
 
     </div>
     <div id="clear" style="clear:both;"></div>
+
+    <script src="//cdnjs.cloudflare.com/ajax/libs/socket.io/2.2.0/socket.io.js" integrity="sha256-yr4fRk/GU1ehYJPAs8P4JlTgu0Hdsp4ZKrx8bDEDC3I=" crossorigin="anonymous"></script>
+
 </body>
 
 </html>

@@ -17,6 +17,10 @@ a) If profanity is found, prompt user to re-enter their username.
 b) If profanity is not found, send the username to the function checking if usernames are in the database.
 
 ___
+5. Implement SocketIO to Python and JavaScript
+a) Display hard-coded message on screen. 
+b) Use send button to send a message and display on screen.
+    b-1) Display username from db and message.
 5. Pull active usernames from database and display to the right of the chat
 a) If user leaves the chatroom page, delete username from database.
 b)
