@@ -2,9 +2,11 @@
 <html>
 
 <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!--<link rel="stylesheet" href="../static/css/chatroom.css">-->
     <link rel="stylesheet" href="{{url_for('static', filename='css/chatroom.css') }}">
     <link rel="stylesheet" href="../static/css/design.css">
+    <link rel="stylesheet" href="{{url_for('static' , filename='css/responsive-chat.css') }}">
 
     <script src = "../static/js/socket.js"></script>
     
@@ -16,14 +18,20 @@
         <button id="leave-btn" onclick='drop_session()' class="buttons">Leave</button>
         <div id="line"></div>
 
-        <div id="clear" style="clear:both;"></div>
+        <!--<div id="clear" style="clear:both;"></div>-->
         <!--specifies which side of elemnt floating elements aren't allowed to float-->
+
+        <div class="rooms">
+            <h3 style="color:#1b00ff; font-weight:bold;">Chat Rooms</h3>
+            {% for r in rooms %}
+                <h5 class="select-room"><strong>{{ r|title }}</strong></h5>
+            {% endfor %}
+        </div>
 
         <div class="chat-box">
             <div class="chat-log" style="float:left; text-align-last:left; overflow: hidden;">
                 <script type="text/javascript">
                     const username = `{{username}}`;
-                    console.log("From DB: " + username);
                 </script>
                 <!-- |e will change any special characters to their unicode value -->
                <!-- <h5 id="user-chat" class="username"><b style="color: #1b00ff" ;>joey</b>:&nbsp;I was just running in
@@ -57,13 +65,18 @@
             <h5><strong>kingjoe345</strong></h5>
             <h5><strong>thiheavyweight</strong></h5>
             <h5><strong>yoLoDragon21</strong></h5>
+            <h5><strong>yoLoDragon21</strong></h5>
+            <h5><strong>yoLoDragon21</strong></h5>
+            <h5><strong>yoLoDragon21</strong></h5>
+            <h5><strong>yoLoDragon21</strong></h5>
+            <h5><strong>User 8</strong></h5>
         </div>
 
         <input id="message-text" type="text" placeholder="Message...">
         <button id="send-btn" class="buttons" onclick='click_to_send();'>Send</button>
 
     </div>
-    <div id="clear" style="clear:both;"></div>
+    <!--<div id="clear" style="clear:both;"></div>-->
 
     <script src="//cdnjs.cloudflare.com/ajax/libs/socket.io/2.2.0/socket.io.js" integrity="sha256-yr4fRk/GU1ehYJPAs8P4JlTgu0Hdsp4ZKrx8bDEDC3I=" crossorigin="anonymous"></script>
 

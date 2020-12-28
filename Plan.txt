@@ -23,4 +23,5 @@ b) Use send button to send a message and display on screen.
     b-1) Display username from db and message.
 5. Pull active usernames from database and display to the right of the chat
 a) If user leaves the chatroom page, delete username from database.
-b)
+___
+6.Can add a Click to show users button for 425px and under screens.

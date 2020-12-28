@@ -1,0 +1,144 @@
+@media only screen and (max-width:375px) and (min-width:320px){
+    h3,h5{
+        margin-bottom: 0%;
+    }
+    #title{
+        font-size: 15px;
+    }
+    .container{
+        height: 30rem;
+        width: 20rem;
+        display:grid;
+    }
+    .chat-box{
+        height: auto;
+        width: 95%;
+    }
+    .rooms{
+        height: auto;
+        width:95%;
+        border-bottom: 2px solid black;
+    }
+    .user-box{
+        height: auto;
+        width: 95%;
+        border-bottom: 2px solid black;
+    }
+    #leave-btn{
+        margin-left:auto;
+        margin-bottom:0%;
+    }
+    #send-btn{
+        margin-top:0%;
+    }
+    .buttons{
+        width: 17%;
+        font-size: 0.60em;
+        font-weight: 550;
+    }
+    .rooms h3{
+        font-size:11px;
+    }
+    .select-room{
+        font-size:11px;
+        display:inline-block;
+    }
+    .user-box h3{
+        font-size: 12px;
+    }
+    .user-box h5{
+        font-size: 11px;
+        display:inline-block;
+    }
+    #message-text{
+        height: 40%;
+        width: 95%;
+        padding: 10px;
+    }
+}
+@media only screen and (max-width:480px) and (min-width:425px){    
+    .container{
+        height: 30rem;
+        width: 25rem;
+    }
+    .chat-box{
+        height: 70%;
+        width: 60%
+    }
+    .rooms{
+        height: 70%;
+        width: 16%
+    }
+    .user-box{
+        height: 70%;
+        width: 16%;
+    }
+    .buttons{
+        width: 17%;
+        font-size: 0.80em;
+        font-weight: 550;
+    }
+    .rooms h3{
+        font-size:13px;
+        margin-bottom:10%;
+    }
+    .select-room{
+        font-size:12px;
+    }
+    .user-box h3{
+        font-size: 13px;
+        margin-bottom: 10%;
+    }
+    .user-box h5{
+        font-size: 12px;
+    }
+    
+}
+@media only screen and (max-width: 992px) and (min-width: 768px){ /*Tablet*/
+    .container{
+        height:34rem;
+        width:46.5rem;
+    }
+    .chat-box{
+        height: 70%;
+        width: 65%
+    }
+    .rooms{
+        height: 70%;
+        width: 15%
+    }
+    .user-box{
+        height: 70%;
+        width: 15%;
+    }
+    #leave-btn{
+        font-size:14.5px;
+        font-weight:bold;
+    }
+    .rooms h3{
+        font-size:14px;
+        /* margin-bottom:10%; */
+    }
+    .select-room{
+        font-size:13px;
+    }
+    .user-box h3{
+        font-size: 14px;
+        /* margin-bottom: 10%; */
+    }
+    .user-box h5{
+        font-size: 13px;
+    }
+
+}
+@media only screen and (max-width:1440px) and (min-width:1024px){
+    .container{
+        height: 35rem;
+        width: 52rem;
+        margin: 0px;
+    }
+    #leave-btn{
+        font-weight:bold;
+    }
+
+}

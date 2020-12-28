@@ -7,9 +7,19 @@ h3,h4,h5{
     font-family: 'system-ui';
     box-sizing: border-box;
 }
+.rooms{
+    float: left;
+    margin: 5px;
+    background-color: white;
+    height: 75%;
+    width: 18%;
+    border: 2px solid rgb(62, 130, 255);
+    border-radius: 15px;
+    border-bottom: 5px solid black;
+}
 .container{
     background-color: white;
-    height: 500px;
+    height: 40.625rem; /*525px original ---> 650px , 40.625rem*/
     border: 5px solid rgb(62, 130, 255);
     border-radius: 15px;
     padding: 5px;
@@ -21,11 +31,11 @@ h3,h4,h5{
     left:50%;
     text-align:center;
     transform: translateX(-50%) translateY(-50%);
-    width: 800px;
+    width: 62.5rem; /*800px original ---> 1000px, 62.5rem*/
 }
 #line{
     width: 100%;
-    height: 3px;
+    height: 0.188rem; /*3px , 0.188rem*/
     background: rgb(52, 59, 57);
 }
 .chat-box{
@@ -34,7 +44,7 @@ h3,h4,h5{
     display: inline-block;
     background-color: #e4eaf9;
     height: 75%;
-    width:65%;
+    width:60%;
     border: 2px solid black;
     border-radius: 5px; 
 
@@ -55,7 +65,7 @@ h3,h4,h5{
     border-radius:2px;
     width: 10%;
     padding:5px;
-    font-size:12px;
+    font-size:0.75em; /*12px , 0.75em*/
     outline:none;
     margin:auto;
     display:inline-block;
@@ -69,23 +79,30 @@ h3,h4,h5{
     font-weight: bold;
 }
 .user-box{
-    display: inline-block;
+    display: inline-block; 
     float: right;
     margin: 5px;
     background-color: #e4eaf9;
     height: 75%;
-    width: 25%;
+    width: 18%;
     border: 2px solid black;
     border-radius: 5px;
     border-bottom: 5px solid black;
 }
 #leave-btn{
     display: inline-block;
-    float: left; 
     margin-left: 2.5%;
+    margin-bottom: 1%;
     border: 3.5px solid black;
 }
 #title{
     font-weight: bolder;
     
+}
+.select-room{
+    font-size: 16px;
+}
+.select-room:hover{
+    color: purple;
+    border:3px solid black;
 }

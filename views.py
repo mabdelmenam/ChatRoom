@@ -10,6 +10,8 @@ app.config['TEMPLATES_AUTO_RELOAD'] = True
 
 socketio = SocketIO(app)
 
+Rooms = ['Room1', 'Room2', 'Room3', 'Room417', 'Room5', "Room6", "Extra Room", "Extra Room 2", "Room 9", "Room 10"] #MAKE ROOM NAMES 7 CHARACTERS MAX
+
 @app.route('/')  # Main Page
 def index():
     return render_template('index.html')
@@ -19,7 +21,7 @@ def chatroom():
         if not session.get('username'):
                 print(session.get('username'), file=sys.stderr)
                 return render_template('index.html',info = session.get('username'))
-        return render_template('chatroom.html', username = session.get('username'))
+        return render_template('chatroom.html', username = session.get('username'), rooms=Rooms)
 
 @app.route('/profanity_filter', methods=['GET', 'POST']) #Profanity Check
 def profanity():
@@ -69,4 +71,11 @@ def message(data):
 @socketio.on('join') #Joining a Room
 def join(data):
         join_room(data['room'])
-        send({})
+        #Message to everyone in the room showing someone has joined
+        send({'msg': data['username'] + " has joined the " + data['room'] + "room"}, room=data['room'])
+        #room['data'] is to send only to a specific room
+
+@socketio.on('leave') #Leaving a Room
+def leave(data):
+        leave_room(data['room'])
+        send({'msg': data['username'] + " has left the " + data['room'] + "room"}, room=data['room'])
