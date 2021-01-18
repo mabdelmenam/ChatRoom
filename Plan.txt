@@ -25,3 +25,4 @@ b) Use send button to send a message and display on screen.
 a) If user leaves the chatroom page, delete username from database.
 ___
 6.Can add a Click to show users button for 425px and under screens.
+-Make a max 10 users and max 10 rooms

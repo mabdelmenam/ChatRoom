@@ -24,13 +24,14 @@
         <div class="rooms">
             <h3 style="color:#1b00ff; font-weight:bold;">Chat Rooms</h3>
             {% for r in rooms %}
-                <h5 class="select-room"><strong>{{ r|title }}</strong></h5>
+                <h5 class="select-room">{{ r|title }}</h5>
             {% endfor %}
         </div>
 
         <div class="chat-box">
             <div class="chat-log" style="float:left; text-align-last:left; overflow: hidden;">
                 <script type="text/javascript">
+                    console.log("USERNAME: " , `{{username}}`);
                     const username = `{{username}}`;
                 </script>
                 <!-- |e will change any special characters to their unicode value -->
@@ -70,6 +71,8 @@
             <h5><strong>yoLoDragon21</strong></h5>
             <h5><strong>yoLoDragon21</strong></h5>
             <h5><strong>User 8</strong></h5>
+            <h5><strong>User 9</strong></h5>
+            <h5><strong>User 10</strong></h5>
         </div>
 
         <input id="message-text" type="text" placeholder="Message...">

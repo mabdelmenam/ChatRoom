@@ -57,7 +57,7 @@
     }
 }
 @media only screen and (max-width:480px) and (min-width:425px){    
-    .container{
+    /* .container{
         height: 30rem;
         width: 25rem;
     }
@@ -91,6 +91,62 @@
     }
     .user-box h5{
         font-size: 12px;
+    } */
+    h3,h5{
+        margin-bottom: 0%;
+    }
+    #title{
+        font-size: 16px;
+    }
+    .container{
+        height: 32rem;
+        width: 24rem;
+        display:grid;
+    }
+    .chat-box{
+        height: auto;
+        width: 95%;
+    }
+    .rooms{
+        height: auto;
+        width:95%;
+        border-bottom: 2px solid black;
+    }
+    .user-box{
+        height: auto;
+        width: 95%;
+        border-bottom: 2px solid black;
+    }
+    #leave-btn{
+        margin-left:auto;
+        margin-bottom:0%;
+    }
+    #send-btn{
+        margin-top:0%;
+    }
+    .buttons{
+        width: 17%;
+        font-size: 0.75em;
+        font-weight: 550;
+    }
+    .rooms h3{
+        font-size:12px;
+    }
+    .select-room{
+        font-size:12px;
+        display:inline-block;
+    }
+    .user-box h3{
+        font-size: 13px;
+    }
+    .user-box h5{
+        font-size: 12px;
+        display:inline-block;
+    }
+    #message-text{
+        height: 40%;
+        width: 95%;
+        padding: 10px;
     }
     
 }

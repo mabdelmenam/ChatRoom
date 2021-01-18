@@ -3,6 +3,7 @@ from main_app import app, my_mysql
 from flask import Flask, request, jsonify, session, redirect, url_for, render_template
 from flask_socketio import SocketIO, send, emit, join_room, leave_room
 import json
+import re
 
 import sys
 
@@ -65,17 +66,22 @@ def drop_session():
 
 @socketio.on('message')
 def message(data):
-        print("Yolo: ", data, file=sys.stderr)
-        send(data)
+        print("The Data: ", data['username'], file=sys.stderr)
+        send({'msg': data['msg'], 'username': data['username'], 'system': 0}, room=data['room'])
 
 @socketio.on('join') #Joining a Room
 def join(data):
         join_room(data['room'])
+
+        #clean = re.compile('<.*?>')
+        #data['room'] = re.sub(clean, '', data['room'])
+
+        #print("Data: ", data['room'],  file=sys.stderr)
         #Message to everyone in the room showing someone has joined
-        send({'msg': data['username'] + " has joined the " + data['room'] + "room"}, room=data['room'])
+        send({'msg': data['username'] + " has joined " + data['room'], 'system': 1}, room=data['room'])
         #room['data'] is to send only to a specific room
 
 @socketio.on('leave') #Leaving a Room
 def leave(data):
         leave_room(data['room'])
-        send({'msg': data['username'] + " has left the " + data['room'] + "room"}, room=data['room'])
+        send({'msg': data['username'] + " has left " + data['room'], 'system': 1}, room=data['room'])
