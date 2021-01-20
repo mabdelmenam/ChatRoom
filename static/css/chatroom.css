@@ -55,6 +55,9 @@ h3,h4,h5{
     /*Creating a scrollbar for the chat*/
     overflow: hidden;
     overflow-y: scroll;
+
+    /*Making a break for sentences*/
+    word-break: break-all;
 }
 #message-text{
     margin: 3px;

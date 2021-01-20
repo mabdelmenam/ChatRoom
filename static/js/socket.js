@@ -6,6 +6,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     socket.on('message', data => {
         const user_chat = document.createElement('h5');
+        user_chat.style.textAlign = "left";
+        user_chat.style.marginBottom = "1%";
 
         if(data.system == 1){
             user_chat.id = "admin_chat";
@@ -36,6 +38,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
         document.getElementById('message-text').value = '';
     }
+    //Adding an eventlistener ' Enter '
+    var input = document.getElementById("message-text");
+    input.addEventListener("keyup", function(event) {
+        event.preventDefault();
+    if (event.keyCode === 13) {
+        sendButton.click();
+        }
+    });
 
     document.querySelectorAll('.select-room').forEach(h5 => {
         h5.onclick = () => {
@@ -61,6 +71,8 @@ document.addEventListener('DOMContentLoaded', () => {
         socket.emit('join', {'username': username, 'room': room});
         //Clear message area
         document.getElementsByClassName('chat-log')[0].innerHTML = '';
+        //Focus on message box when joining room
+        document.getElementById('message-text').focus();
     }
     //Print system message
     function printSysMsg(msg){

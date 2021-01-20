@@ -11,7 +11,7 @@ app.config['TEMPLATES_AUTO_RELOAD'] = True
 
 socketio = SocketIO(app)
 
-Rooms = ['Room1', 'Room2', 'Room3', 'Room417', 'Room5', "Room6", "Extra Room", "Extra Room 2", "Room 9", "Room 10"] #MAKE ROOM NAMES 7 CHARACTERS MAX
+Rooms = ['Room 1', 'Room 2', 'Room 3', 'Room 4', 'Room 5', "Room 6", "Room 7", "Room 8", "Room 9", "Room 10"] #MAKE ROOM NAMES 7 CHARACTERS MAX
 
 @app.route('/')  # Main Page
 def index():
@@ -72,11 +72,6 @@ def message(data):
 @socketio.on('join') #Joining a Room
 def join(data):
         join_room(data['room'])
-
-        #clean = re.compile('<.*?>')
-        #data['room'] = re.sub(clean, '', data['room'])
-
-        #print("Data: ", data['room'],  file=sys.stderr)
         #Message to everyone in the room showing someone has joined
         send({'msg': data['username'] + " has joined " + data['room'], 'system': 1}, room=data['room'])
         #room['data'] is to send only to a specific room
