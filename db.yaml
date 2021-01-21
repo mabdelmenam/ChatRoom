@@ -1,4 +1,9 @@
-mysql_host: "localhost"
-mysql_user: "my_user"
-mysql_password: "password"
-mysql_database: "chatroom"
+mysql_host: "z5zm8hebixwywy9d.cbetxkdyhwsb.us-east-1.rds.amazonaws.com"
+mysql_user: "auwb1sa4zhdb37u6"
+mysql_password: "el7ah2h3hu9krwb0"
+mysql_database: "kqtzob7n84q303et"
+
+# mysql_host: "localhost"
+# mysql_user: "my_user"
+# mysql_password: "password"
+# mysql_database: "chatroom"
