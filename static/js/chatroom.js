@@ -14,7 +14,7 @@ username.addEventListener("keyup", function(event) {
 });
 
 function filter(){
-    var file = "http://localhost:5000/profanity_filter";
+    var file = "/profanity_filter";
 
     var obj = {
         user: username.value
