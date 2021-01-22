@@ -9,7 +9,7 @@ import sys
 
 app.config['TEMPLATES_AUTO_RELOAD'] = True
 
-socketio = SocketIO(app)
+socketio = SocketIO(app, cors_allowed_origins="*")
 
 Rooms = ['Room 1', 'Room 2', 'Room 3', 'Room 4', 'Room 5', "Room 6", "Room 7", "Room 8", "Room 9", "Room 10"] #MAKE ROOM NAMES 7 CHARACTERS MAX
 

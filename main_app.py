@@ -17,7 +17,7 @@ my_mysql = MySQL(app)
 
 from views import *
 CORS(app, supports_credentials=True)
-cors_allowed_origins=['http://url', 'https://url']
+# cors_allowed_origins=['http://url', 'https://url']
 
 if __name__ == '__main__':
     app.run()
